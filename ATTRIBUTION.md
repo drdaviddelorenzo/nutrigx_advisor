@@ -12,7 +12,7 @@
 - Conceptualisation and design
 - Core analysis engine development
 - SNP panel curation
-- ClawBio implementation
+- OpenClaw platform implementation
 - OpenClaw adaptation
 
 ### Scientific & Technical Foundation
@@ -35,7 +35,7 @@ The SNP panel and risk scoring algorithm are informed by peer-reviewed nutrigeno
 
 ### Platform & Infrastructure
 
-- **ClawBio**: Community-driven bioinformatics skill library
+
   - Original platform for skill development and testing
   - Infrastructure for skill management
   - Community collaboration features
@@ -58,7 +58,7 @@ The SNP panel and risk scoring algorithm are informed by peer-reviewed nutrigeno
 ### Community & Feedback
 
 Special thanks to:
-- **ClawBio community members** who tested early versions and provided feedback
+
 - **Nutrigenomics researchers** who published the foundational studies
 - **OpenClaw development team** for platform support
 - **Beta testers** who identified edge cases and improvements
@@ -211,7 +211,7 @@ Users must:
 
 Nutrigenomics was developed:
 - As part of David de Lorenzo's research in personalised nutrition and nutrigenomics
-- In collaboration with ClawBio community
+
 - With support from ongoing health informatics work
 
 **No commercial funding** — This is open-source, community-driven science.

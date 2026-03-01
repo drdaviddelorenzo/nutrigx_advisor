@@ -262,7 +262,7 @@ See [ATTRIBUTION.md](ATTRIBUTION.md) for more citation formats.
 
 ## 🙏 Acknowledgments
 
-- **ClawBio community** for skill development platform
+
 - **OpenClaw team** for web platform integration
 - **Nutrigenomics researchers** for foundational research
 - **GWAS Catalog** and **ClinVar** for genetic data

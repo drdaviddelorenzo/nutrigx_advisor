@@ -23,7 +23,7 @@ This document recognises the contributions of individuals and organisations to t
 
 ## Development Contributors
 
-### ClawBio Version (v0.1.0)
+
 - **David de Lorenzo**
   - All initial development
 
@@ -94,7 +94,7 @@ This document recognises the contributions of individuals and organisations to t
 ## Special Thanks
 
 ### Institutions
-- **ClawBio Community** — Infrastructure and platform support
+
 - **OpenClaw Team** — Integration and deployment assistance
 - **NeoTree Project** — Collaborating health informatics work
 - **Office for National Statistics** — UK administrative data research context
@@ -258,7 +258,7 @@ Date: YYYY-MM-DD
 
 ## Recognition Timeline
 
-### v0.1.0 (ClawBio Initial Release)
+
 - **February 2025** — David de Lorenzo
 
 ### v0.2.0-openclaw (OpenClaw Adaptation)

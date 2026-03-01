@@ -7,14 +7,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ---
 
-## [0.2.0-openclaw] — 2026-02-28
+## [0.2.0] — 2026-02-28
 
 ### Added
 
-#### OpenClaw Adaptation
+#### OpenClaw Integration
 - **`openclaw_adapter.py`** — Function-based entry point for OpenClaw platform
-  - `NutrigenomicsOpenClaw` class wraps core analysis
-  - `run_analysis()` entry point for OpenClaw integration
+  - `NutrigenomicsOpenClaw` class wraps analysis engine
+  - `run_analysis()` entry point for web-based deployment
   - Structured JSON output with status, summary, risk scores, and file paths
   - Comprehensive error handling with user-friendly messages
   
@@ -25,14 +25,15 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   - Metadata for platform discovery
 
 #### Documentation
-- **`SKILL_OPENCLAW.md`** — User-facing documentation optimised for OpenClaw
+- **`SKILL.md`** — OpenClaw skill instructions
+  - User-facing documentation optimised for web platform
   - "How to get your genetic data" guide
   - Quick start workflow
   - Detailed gene descriptions with examples
   - Privacy & security emphasis
   - Comprehensive FAQ and troubleshooting
   
-- **`README_OPENCLAW.md`** — Comprehensive user guide for OpenClaw platform
+- **`README.md`** — Main documentation
   - Step-by-step tutorial
   - Input file format specifications with examples
   - Understanding results section
@@ -40,301 +41,159 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   
 - **`IMPLEMENTATION.md`** — Technical deployment guide
   - Installation and testing procedures
-  - OpenClaw platform integration steps
+  - Platform integration steps
   - Environment configuration
   - Performance benchmarks
   - Security verification checklist
-  - Troubleshooting for deployment issues
 
-- **`MIGRATION.md`** — Detailed migration guide from ClawBio to OpenClaw
-  - Architecture changes explained
-  - Behavioral differences documented
-  - Scientific integrity verification
-  - Backward compatibility notes
-  - FAQ for developers
-
-- **`ATTRIBUTION.md`** — Comprehensive attribution and acknowledgments
+- **`ATTRIBUTION.md`** — Attribution and acknowledgments
   - Author and maintainer information
-  - Scientific literature citations (15+ peer-reviewed papers)
+  - Links to authoritative scientific sources
   - Software and library acknowledgments
   - Citation formats (BibTeX, APA, Chicago)
-  - Non-human AI contribution disclosure
-  - Ethical considerations and disclaimers
+  - Transparency about AI-assisted development
 
-- **`CONTRIBUTORS.md`** — Contributor recognition and guidelines
-  - Contribution opportunities listed
-  - Recognition levels defined
-  - Code of conduct
-  - Contributor license agreement template
-  - Getting started guide for contributors
-
-- **`CHANGELOG.md`** (this file) — Version history documentation
-
-#### Infrastructure
-- **`requirements.txt`** — Python dependency specifications
-  - Pinned versions for reproducibility
-  - Compatible with Python 3.11+
-
+#### Licensing & Community
 - **`LICENSE`** — MIT License
-  - Full legal text
-  - Copyright notice (© 2026 David de Lorenzo)
+  - Open-source, permissive licensing
+  - Copyright © 2026 David de Lorenzo
+  - Allows commercial and private use
 
-### Changed
-
-#### Documentation
-- **`SKILL.md`** — Retained as original ClawBio documentation
-  - No changes to original content
-  - Serves as reference for core science
-  - Available alongside new OpenClaw materials
-
-### Technical Improvements
-
-- **Error Handling**
-  - File format validation with helpful error messages
-  - Missing SNP panel detection with clear instructions
-  - Panel coverage reporting (percentage of SNPs found)
-  - User-friendly error messages (no stack traces)
-
-- **Output Formatting**
-  - Structured JSON output for programmatic use
-  - Executive summary generation
-  - Risk score serialisation
-  - Figure path references in result dictionary
-
-- **Documentation Structure**
-  - Separated platform-specific guidance
-  - Multiple documentation entry points for different audiences
-  - Comprehensive cross-referencing
-  - Clear attribution and licensing
-
-### Backward Compatibility
-
-✅ **100% backward compatible with ClawBio version**
-- All original Python modules unchanged
-- SNP panel identical
-- Risk scoring algorithm identical
-- Report generation identical
-- Test suite unchanged
-
-### Documentation Quality
-
-- ✅ 3 comprehensive user guides (SKILL_OPENCLAW, README_OPENCLAW, IMPLEMENTATION)
-- ✅ Architecture documentation (MIGRATION)
-- ✅ Attribution and licensing (ATTRIBUTION)
-- ✅ Contributor guidelines (CONTRIBUTORS)
-- ✅ Version history (CHANGELOG)
-- ✅ MIT License included
-
----
-
-## [0.1.0] — 2025-02-27
-
-### Initial Release (ClawBio)
+- **`CONTRIBUTORS.md`** — Community contribution framework
+  - How to report bugs
+  - How to suggest SNPs
+  - Code contribution guidelines
+  - Recognition pathways for contributors
+  - Code of conduct
 
 #### Core Features
-- **Genetic Data Parsing**
-  - 23andMe format support (.txt, .csv)
-  - AncestryDNA format support (.csv)
-  - VCF format support
-  - Automatic format detection
+- **SNP Panel**: 58 SNPs across 40+ genes
+- **Nutrient Categories**: 8 categories (micronutrients, macronutrients, omega-3s, caffeine, alcohol, sensitivities, antioxidants, detoxification)
+- **File Format Support**: 23andMe, AncestryDNA, VCF
+- **Risk Scoring**: 0-10 scale per nutrient
+- **Visualisations**: Radar charts and interaction heatmaps
+- **Privacy**: 100% local processing, no data transmission
+- **Reproducibility**: Complete analysis bundles with documentation
 
-- **SNP Analysis**
-  - 58 SNP panel covering 40+ genes
-  - Risk scoring (0-10 scale per nutrient)
-  - 8 nutrient categories
-  - Weighted effect size integration
+### Changed
+- Rebranded as Nutrigenomics for consumer-focused OpenClaw platform
+- Web-based interface accessible to general users
+- Simplified installation (direct GitHub or ClawHub registry)
+- Updated all documentation for OpenClaw users
 
-- **Risk Scoring Categories**
-  - Micronutrient metabolism (MTHFR, VDR, BCMO1, etc.)
-  - Macronutrient metabolism (APOE, FTO, PPARG, etc.)
-  - Omega-3 & PUFA metabolism (FADS1/2, ELOVL2)
-  - Caffeine metabolism (CYP1A2, AHR)
-  - Alcohol metabolism (ADH1B, ALDH2)
-  - Food sensitivities (MCM6, HLA proxies)
-  - Antioxidant pathways (SOD2, GPX1, GSTT1, NQO1, COMT)
-  - Gene-nutrient interactions
-
-- **Report Generation**
-  - Markdown report with gene-by-gene breakdown
-  - Radar chart (nutrient risk profile)
-  - Heatmap (gene-nutrient interactions)
-  - Personalised recommendations
-  - Supplement interaction guidance
-
-- **Reproducibility**
-  - commands.sh — Full CLI reproducibility
-  - environment.yml — Conda environment export
-  - checksums.txt — SHA-256 validation
-  - provenance.json — Metadata tracking
-
-- **Privacy & Security**
-  - Local processing only
-  - No data transmission
-  - No account required
-  - Raw genotypes never exposed in output
-
-#### Scientific Foundation
-- Peer-reviewed SNP selection
-- GWAS Catalog sourced variants
-- ClinVar integrated annotations
-- Effect sizes from published literature
-- Population frequency data
-
-#### Documentation
-- **SKILL.md** — Comprehensive skill documentation for ClawBio
-- **SNP panel documentation** with gene descriptions
-- **Algorithm explanation** with scoring methodology
-- **Usage examples** and CLI instructions
-
-#### Testing
-- Unit test suite (pytest)
-- Synthetic patient generation for testing
-- Example outputs with pre-rendered report
-- Edge case validation
-
----
-
-## Planned Features (Roadmap)
-
-### v0.3.0 (Microbiome Integration)
-- [ ] 16S rRNA microbiome input support
-- [ ] Microbiome × genotype interaction analysis
-- [ ] Personalised probiotic recommendations
-- [ ] Microbiome-optimised dietary guidance
-
-### v0.4.0 (Longitudinal Tracking)
-- [ ] Multi-report comparison
-- [ ] Temporal trend analysis
-- [ ] Dietary change impact assessment
-- [ ] Report history visualisation
-
-### v0.5.0 (Advanced Immune Analysis)
-- [ ] HLA typing from genetic data
-- [ ] Coeliac risk assessment
-- [ ] Gluten sensitivity prediction
-- [ ] Immune-mediated food reaction guidance
-
-### v1.0.0 (Multi-Omics Integration)
-- [ ] Metabolomics data integration
-- [ ] Gene × metabolite interactions
-- [ ] Dietary intake data incorporation
-- [ ] Comprehensive phenotype prediction
-- [ ] Integration with NeoTree for maternal nutrition scoring
-
-### v1.5.0 (Clinical Integration)
-- [ ] Healthcare provider report generation
-- [ ] Clinical reference ranges
-- [ ] Biomarker testing recommendations
-- [ ] EHR integration capabilities
+### Fixed
+- `.DS_Store` files excluded from version control
+- Removed unverified scientific citations
+- Improved error messages for common issues
+- Better handling of incomplete file formats
 
 ---
 
 ## Known Issues & Limitations
 
-### Current Limitations (v0.2.0-openclaw)
+### About This Project
+
+**Nutrigenomics** is the consumer-focused, web-based version of nutrigenomics analysis for OpenClaw. 
+
+For healthcare professionals and researchers, a professional-grade command-line tool (**NutriGx Advisor**) is available for ClawBio platform, offering advanced features and integration capabilities for clinical and research workflows.
+
+### Current Limitations (v0.2.0)
 
 1. **Common Variants Only**
-   - SNP panel limited to MAF > 1%
+   - SNP panel limited to MAF > 1% in major populations
    - Rare pathogenic variants not detected
-   - Requires clinical genetic testing for rare variants
+   - Primarily based on European GWAS data
 
-2. **Population Context**
-   - Effect sizes predominantly from European GWAS
-   - Accuracy may vary across ancestries
-   - Population-specific variants not yet included
+2. **Gene × Environment Not Modeled**
+   - Current analysis is genotype-only
+   - Doesn't account for diet, lifestyle, environment
+   - Future versions will integrate these factors
 
-3. **Gene × Environment Interaction**
-   - Algorithm doesn't account for lifestyle factors
-   - Genetic risk scores are probabilistic, not diagnostic
-   - Environmental inputs (diet, exercise, stress) not included
+3. **File Size Limits**
+   - VCF files should be <100MB
+   - Large genomic files may timeout
+   - Consider splitting very large datasets
 
-4. **Single Test Provider Data**
-   - Each test only covers subset of SNPs
-   - Panel coverage varies by genotyping chip
-   - Some variants may be "NOT_TESTED"
+4. **Population Context**
+   - SNP effects derived from European ancestry studies
+   - May not apply equally to other populations
+   - Users encouraged to consult healthcare providers
 
-5. **File Size Limitations**
-   - Tested up to 50 MB files
-   - Larger files may timeout on some systems
-   - Streaming parser planned for v0.3.0
+5. **Educational Use Only**
+   - Not a medical diagnostic tool
+   - Cannot diagnose nutrient deficiencies
+   - Cannot prescribe treatments
+   - Should supplement, not replace, professional advice
 
-### Planned Improvements
+### Recommendations for Users
 
-- [ ] Population-stratified risk scores (v0.3.0)
-- [ ] Environmental factor weighting (v1.0.0)
-- [ ] Streaming file parser for large files (v0.3.0)
-- [ ] Batch processing capability (v1.0.0)
-- [ ] Multi-ancestry model training (v1.5.0)
-
----
-
-## Security & Privacy Notes
-
-### v0.2.0-openclaw
-- ✅ All analysis local (no external API calls)
-- ✅ No data persistence after analysis
-- ✅ No network transmission of genetic data
-- ✅ Input sanitisation for file paths
-- ✅ No sensitive data in error messages
-- ✅ Temporary files cleaned automatically
-
-### Verification
-- No external network calls detected
-- File system access restricted to uploads and output
-- Memory cleared after analysis completion
-- Temp files removed on completion or error
+- **Consult Healthcare Providers** — Always verify findings with qualified professionals
+- **Biomarker Testing** — Confirm nutrient status with blood tests
+- **Dietary Assessment** — Combine genetic findings with actual dietary intake analysis
+- **Professional Guidance** — Work with dietitians for personalised meal planning
 
 ---
 
-## Deprecation Notices
+## Future Directions
 
-### v0.2.0-openclaw
-- No deprecations in initial OpenClaw release
-- ClawBio CLI still supported (use original SKILL.md)
+Community feedback and contributions welcome! Areas of interest for future development:
 
-### Planned Deprecations
-- **v1.0.0**: ClawBio CLI will be deprecated (OpenClaw recommended)
-- **v1.5.0**: Legacy input format parsing may be simplified
-
----
-
-## Migration Guide
-
-### From ClawBio v0.1.0 to OpenClaw v0.2.0-openclaw
-
-See `MIGRATION.md` for detailed instructions:
-- No code changes needed for existing analysis
-- Use new `openclaw_adapter.py` instead of `nutrigenomics.py`
-- Same results, improved user interface
+- **Microbiome Integration** — Understand how gut bacteria interact with your genetics
+- **Dietary Tracking** — Sync nutrition data with genetic recommendations
+- **Population Expansion** — Include non-European ancestry populations
+- **Advanced Analytics** — Machine learning for personalized predictions
+- **Healthcare Integration** — Connect with medical professionals for clinical use
 
 ---
 
-## Contributors
+## Contributing
 
-### v0.2.0-openclaw
-- David de Lorenzo ([@drdaviddelorenzo](https://github.com/drdaviddelorenzo)) — Project lead, architecture adaptation
-- Claude (Anthropic) — AI-assisted documentation and code generation
+We welcome contributions from:
+- **Researchers** — Suggest new SNPs or analysis methods
+- **Developers** — Improve code, add features, fix bugs
+- **Translators** — Help make documentation available in other languages
+- **Users** — Share feedback and use cases
 
-### v0.1.0
-- David de Lorenzo ([@drdaviddelorenzo](https://github.com/drdaviddelorenzo)) — Original development
+See [CONTRIBUTORS.md](CONTRIBUTORS.md) for guidelines.
+
+---
+
+## Citation
+
+If you use Nutrigenomics in research or education:
+
+### BibTeX
+```bibtex
+@software{delorenzo2026nutrigenomics,
+  author = {de Lorenzo, David},
+  title = {Nutrigenomics: Personalised Nutrition from Genetic Data},
+  year = {2026},
+  url = {https://github.com/drdaviddelorenzo/nutrigenomics},
+  version = {0.2.0}
+}
+```
+
+### APA
+de Lorenzo, D. (2026). *Nutrigenomics: Personalised nutrition from genetic data* (Version 0.2.0) [Software]. Retrieved from https://github.com/drdaviddelorenzo/nutrigenomics
+
+### Chicago
+de Lorenzo, David. "Nutrigenomics: Personalised Nutrition from Genetic Data." Version 0.2.0. Accessed [Date]. https://github.com/drdaviddelorenzo/nutrigenomics.
+
+---
+
+## Resources
+
+- **GitHub**: https://github.com/drdaviddelorenzo/nutrigenomics
+- **Author**: [@drdaviddelorenzo](https://github.com/drdaviddelorenzo)
+- **Website**: https://drdaviddelorenzo.github.io
+- **Email**: david@drdaviddelorenzo.dev
+- **OpenClaw**: https://openclaw.ai
+- **ClawHub**: https://clawhub.ai
 
 ---
 
 ## License
 
-All versions released under the MIT License.
+MIT License — See [LICENSE](LICENSE) for full details.
 
----
-
-## References
-
-Detailed scientific references available in:
-- `ATTRIBUTION.md` — Complete citation list
-- `SKILL_OPENCLAW.md` — In-text references by topic
-- Original papers — DOI links provided throughout
-
----
-
-*Last updated: February 28, 2026*
-*Current stable version: 0.2.0-openclaw*
-*Next planned release: 0.3.0 (Q3 2026)*
+© 2026 David de Lorenzo

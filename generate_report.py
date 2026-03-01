@@ -100,7 +100,7 @@ def generate_report(snp_calls, risk_scores, snp_panel, output_dir, figures=True,
         "# Nutrigenomics Personalised Nutrition Report",
         "",
         f"**Generated**: {timestamp}  ",
-        f"**Tool**: ClawBio Nutrigenomics v0.1.0  ",
+        f"**Tool**: Nutrigenomics v0.2.0  ",
         f"**Input**: `{Path(input_file).name}`  ",
         "",
         "> **Disclaimer**: This report is for research and educational purposes only. "

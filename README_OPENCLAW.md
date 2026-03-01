@@ -292,7 +292,7 @@ See `LICENSE` file for details.
 
 ## 🙏 Acknowledgments
 
-- **ClawBio community** for infrastructure and support
+
 - **OpenClaw team** for platform integration
 - **Nutrigenomics researchers** whose work underpins the SNP panel
 - **Community contributors** who've helped refine the skill

@@ -223,7 +223,7 @@ Have suggestions for SNPs to add? Found a bug? Want to contribute?
 - Enhanced user-facing documentation
 - Simplified report generation for non-technical users
 
-**v0.1.0** (ClawBio initial release)
+**v0.1.0** (Initial release)
 - Core nutrigenomics analysis
 - 40+ SNP panel
 - Report generation with visualisations

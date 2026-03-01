@@ -3,7 +3,7 @@
 **Skill ID**: `nutrigenomics`  
 **Version**: 0.1.0  
 **Status**: MVP  
-**Author**: David de Lorenzo (ClawBio Community) 
+**Author**: David de Lorenzo 
 **Requires**: Python 3.11+, pandas, numpy, matplotlib, seaborn, reportlab (optional)
 
 ---
@@ -158,7 +158,7 @@ Exports to the output directory (not committed to the repo):
 - `commands.sh` — full CLI to reproduce analysis
 - `environment.yml` — pinned conda environment
 - `checksums.txt` — SHA-256 checksums of input and output files
-- `provenance.json` — timestamp and ClawBio version tag
+- `provenance.json` — timestamp and version information
 
 ---
 
@@ -265,4 +265,4 @@ Users are encouraged to verify specific claims through these authoritative sourc
 The SNP panel (`data/snp_panel.json`) is maintained by the skill author.
 To suggest additions or corrections, contact David de Lorenzo directly via
 GitHub ([@drdaviddelorenzo](https://github.com/drdaviddelorenzo)) or open
-an issue tagging him in the main ClawBio repository.
+an issue on GitHub.

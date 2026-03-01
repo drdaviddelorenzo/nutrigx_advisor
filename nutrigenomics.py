@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
 nutrigenomics.py — Nutrigenomics: Personalised Nutrition from Genetic Data
-ClawBio Skill v0.1.0
+Nutrigenomics OpenClaw Skill v0.2.0
 
 Usage:
     python nutrigenomics.py --input genome.csv --output results/

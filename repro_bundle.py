@@ -21,7 +21,7 @@ dependencies:
   - seaborn>=0.13
   - pip
   - pip:
-    - clawbio==0.1.0
+    
 """
 
 
@@ -45,7 +45,7 @@ def create_reproducibility_bundle(input_file: str, output_dir: str, panel_path: 
     commands = f"""#!/usr/bin/env bash
 # Nutrigenomics — Reproducibility Script
 # Generated: {timestamp}
-# ClawBio Nutrigenomics v0.1.0
+# Nutrigenomics v0.2.0
 
 set -euo pipefail
 
@@ -79,7 +79,7 @@ sha256sum -c checksums.txt
 
     # provenance.json
     provenance = {
-        "tool": "ClawBio Nutrigenomics",
+        "tool": "Nutrigenomics",
         "version": "0.1.0",
         "timestamp": timestamp,
         "input_file": Path(input_file).name,
