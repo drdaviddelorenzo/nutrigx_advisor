@@ -93,12 +93,6 @@ This document recognises the contributions of individuals and organisations to t
 
 ## Special Thanks
 
-### Institutions
-
-- **OpenClaw Team** — Integration and deployment assistance
-- **NeoTree Project** — Collaborating health informatics work
-- **Office for National Statistics** — UK administrative data research context
-
 ### Research Communities
 - **Nutrigenomics researchers** worldwide for publishing foundational studies
 - **GWAS Catalog contributors** for SNP and effect size data

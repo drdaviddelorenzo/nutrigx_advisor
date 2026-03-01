@@ -243,7 +243,6 @@ gene names, SNP IDs, and risk categories).
 - [ ] **v0.2**: Microbiome × genotype interaction module (16S rRNA input)
 - [ ] **v0.3**: Longitudinal tracking — compare reports across time
 - [ ] **v0.4**: HLA typing for immune-mediated food reactions (coeliac, gluten sensitivity)
-- [ ] **v0.5**: Integration with NeoTree neonatal data for maternal nutrition risk scoring
 - [ ] **v1.0**: Multi-omics integration (metabolomics + genomics + dietary recall)
 
 ---

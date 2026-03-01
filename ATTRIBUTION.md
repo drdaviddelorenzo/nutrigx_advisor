@@ -63,12 +63,6 @@ Special thanks to:
 - **OpenClaw development team** for platform support
 - **Beta testers** who identified edge cases and improvements
 
-### Institutions & Affiliations
-
-- **NeoTree Project**: Neonatal clinical decision support system (Zimbabwe & Malawi)
-- **Office for National Statistics (ONS)**: UK administrative health data research
-- **Wellcome Climate & Evidence Synthesis Hub**: Climate and health research collaboration
-
 ---
 
 ## How to Cite This Work
