@@ -1,6 +1,6 @@
 # Attribution & Acknowledgments
 
-## NutriGx Advisor — Credits and Recognition
+## Nutrigenomics — Credits and Recognition
 
 ### Author & Maintainer
 **David de Lorenzo** ([@drdaviddelorenzo](https://github.com/drdaviddelorenzo))
@@ -73,25 +73,25 @@ Special thanks to:
 
 ## How to Cite This Work
 
-If you use NutriGx Advisor in research or educational contexts, please cite it as:
+If you use Nutrigenomics in research or educational contexts, please cite it as:
 
 ### BibTeX
 ```bibtex
-@software{delorenzo2026nutrigx,
+@software{delorenzo2026nutrigenomics,
   author = {de Lorenzo, David},
-  title = {NutriGx Advisor: Personalised Nutrition from Genetic Data},
+  title = {Nutrigenomics: Personalised Nutrition from Genetic Data},
   year = {2026},
-  url = {https://github.com/clawbio/nutrigx-advisor},
+  url = {https://github.com/clawbio/nutrigenomics},
   version = {0.2.0},
   license = {MIT}
 }
 ```
 
 ### APA Format
-de Lorenzo, D. (2026). *NutriGx Advisor: Personalised nutrition from genetic data* (Version 0.2.0) [Software]. Retrieved from https://github.com/clawbio/nutrigx-advisor
+de Lorenzo, D. (2026). *Nutrigenomics: Personalised nutrition from genetic data* (Version 0.2.0) [Software]. Retrieved from https://github.com/clawbio/nutrigenomics
 
 ### Chicago Format
-de Lorenzo, David. "NutriGx Advisor: Personalised Nutrition from Genetic Data." Version 0.2.0. Accessed [Date]. https://github.com/clawbio/nutrigx-advisor.
+de Lorenzo, David. "Nutrigenomics: Personalised Nutrition from Genetic Data." Version 0.2.0. Accessed [Date]. https://github.com/clawbio/nutrigenomics.
 
 ---
 
@@ -156,7 +156,7 @@ All code remains under David de Lorenzo's authorship with appropriate acknowledg
 
 ## Data Privacy & User Recognition
 
-Users of NutriGx Advisor consent to:
+Users of Nutrigenomics consent to:
 - ✅ Their genetic data remains private (local processing only)
 - ✅ No personal data collection or storage
 - ✅ No tracking or analytics of individual results
@@ -171,7 +171,7 @@ Users providing their own genetic data from:
 - **AncestryDNA**: https://www.ancestry.com/dna
 - **Other direct-to-consumer tests**: FTDNA, MyHeritage, etc.
 
-**Retain all rights to their genetic data.** NutriGx Advisor:
+**Retain all rights to their genetic data.** Nutrigenomics:
 - Does not claim ownership
 - Does not upload or store their data
 - Does not use it for any purpose beyond their individual analysis
@@ -193,7 +193,7 @@ This tool was developed with attention to:
 
 ## Disclaimer of Responsibility
 
-NutriGx Advisor is provided "as is" without warranty. The author:
+Nutrigenomics is provided "as is" without warranty. The author:
 - Does not provide medical advice
 - Does not constitute healthcare provider relationship
 - Should not replace professional medical/nutritional consultation
@@ -209,7 +209,7 @@ Users must:
 
 ## Funding & Support
 
-NutriGx Advisor was developed:
+Nutrigenomics was developed:
 - As part of David de Lorenzo's research in personalised nutrition and nutrigenomics
 - In collaboration with ClawBio community
 - With support from ongoing health informatics work
@@ -223,13 +223,13 @@ NutriGx Advisor was developed:
 For questions about attribution, licensing, or how to credit this work:
 - **Email**: david@nutrigenomics.dev
 - **GitHub**: [@drdaviddelorenzo](https://github.com/drdaviddelorenzo)
-- **Issue tracker**: https://github.com/clawbio/nutrigx-advisor/issues
+- **Issue tracker**: https://github.com/clawbio/nutrigenomics/issues
 
 ---
 
 ## License Summary
 
-**NutriGx Advisor is free and open-source under the MIT License.**
+**Nutrigenomics is free and open-source under the MIT License.**
 
 You are free to:
 ✅ Use it (personal, educational, commercial)
@@ -247,5 +247,5 @@ See `LICENSE` file for full legal text.
 ---
 
 *Last updated: February 28, 2026*
-*NutriGx Advisor v0.2.0-openclaw*
+*Nutrigenomics v0.2.0-openclaw*
 *Made with science, care, and respect for genetic privacy.*

@@ -1,14 +1,14 @@
 #!/usr/bin/env python3
 """
-openclaw_adapter.py — OpenClaw compatibility layer for NutriGx Advisor
+openclaw_adapter.py — OpenClaw compatibility layer for Nutrigenomics
 
-NutriGx Advisor: Personalised Nutrition from Genetic Data
+Nutrigenomics: Personalised Nutrition from Genetic Data
 Author: David de Lorenzo (https://github.com/drdaviddelorenzo)
 Website: https://drdaviddelorenzo.github.io
 License: MIT
-Repository: https://github.com/drdaviddelorenzo/nutrigx-advisor
+Repository: https://github.com/drdaviddelorenzo/nutrigenomics
 
-This module wraps the core NutriGx analysis for use via OpenClaw's platform.
+This module wraps the core Nutrigenomics analysis for use via OpenClaw's platform.
 It handles file uploads, manages output, and formats results for web delivery.
 
 Usage (via OpenClaw):
@@ -23,7 +23,7 @@ import tempfile
 from pathlib import Path
 from typing import Dict, Any, Tuple, Optional
 
-# Import core NutriGx modules
+# Import core Nutrigenomics modules
 from parse_input import parse_genetic_file
 from extract_genotypes import extract_snp_genotypes
 from score_variants import compute_nutrient_risk_scores
@@ -31,9 +31,9 @@ from generate_report import generate_report
 from repro_bundle import create_reproducibility_bundle
 
 
-class NutriGxOpenClaw:
+class NutrigenomicsOpenClaw:
     """
-    OpenClaw adapter for NutriGx Advisor.
+    OpenClaw adapter for Nutrigenomics.
     
     Handles:
     - File upload and format detection
@@ -70,7 +70,7 @@ class NutriGxOpenClaw:
         output_dir: Optional[str] = None
     ) -> Dict[str, Any]:
         """
-        Run the complete NutriGx analysis on a genetic data file.
+        Run the complete Nutrigenomics analysis on a genetic data file.
         
         Args:
             input_file: Path to genetic data file (23andMe, AncestryDNA, or VCF)
@@ -101,12 +101,12 @@ class NutriGxOpenClaw:
             
             # Set up output directory
             if output_dir is None:
-                output_dir = tempfile.mkdtemp(prefix="nutrigx_")
+                output_dir = tempfile.mkdtemp(prefix="nutrigenomics_")
             
             output_path = Path(output_dir)
             output_path.mkdir(parents=True, exist_ok=True)
             
-            print(f"[NutriGx] Parsing genetic file: {input_path.name}")
+            print(f"[Nutrigenomics] Parsing genetic file: {input_path.name}")
             
             # Parse genetic data
             try:
@@ -131,22 +131,22 @@ class NutriGxOpenClaw:
                     "risk_scores": {}
                 }
             
-            print(f"[NutriGx] Loaded {len(genotype_table):,} variants")
+            print(f"[Nutrigenomics] Loaded {len(genotype_table):,} variants")
             
             # Extract SNP genotypes
-            print("[NutriGx] Extracting SNP genotypes from panel...")
+            print("[Nutrigenomics] Extracting SNP genotypes from panel...")
             snp_calls = extract_snp_genotypes(genotype_table, self.snp_panel)
             
             present = sum(1 for v in snp_calls.values() if v["status"] == "found")
             coverage = (present / len(self.snp_panel)) * 100
-            print(f"[NutriGx] Panel coverage: {present}/{len(self.snp_panel)} SNPs ({coverage:.1f}%)")
+            print(f"[Nutrigenomics] Panel coverage: {present}/{len(self.snp_panel)} SNPs ({coverage:.1f}%)")
             
             # Compute risk scores
-            print("[NutriGx] Computing nutrient risk scores...")
+            print("[Nutrigenomics] Computing nutrient risk scores...")
             risk_scores = compute_nutrient_risk_scores(snp_calls, self.snp_panel)
             
             # Generate report
-            print("[NutriGx] Generating personalised report...")
+            print("[Nutrigenomics] Generating personalised report...")
             report_path = generate_report(
                 snp_calls=snp_calls,
                 risk_scores=risk_scores,
@@ -157,7 +157,7 @@ class NutriGxOpenClaw:
             )
             
             # Generate reproducibility bundle
-            print("[NutriGx] Creating reproducibility bundle...")
+            print("[Nutrigenomics] Creating reproducibility bundle...")
             create_reproducibility_bundle(
                 input_file=str(input_path),
                 output_dir=str(output_path),
@@ -170,7 +170,7 @@ class NutriGxOpenClaw:
             
             # Locate generated figures
             figures = {}
-            for fig_file in ["nutrigx_radar.png", "nutrigx_heatmap.png"]:
+            for fig_file in ["nutrigenomics_radar.png", "nutrigenomics_heatmap.png"]:
                 fig_path = output_path / fig_file
                 if fig_path.exists():
                     figures[fig_file.replace(".png", "")] = str(fig_path)
@@ -185,11 +185,11 @@ class NutriGxOpenClaw:
                 "output_dir": str(output_path)
             }
             
-            print(f"[NutriGx] Success! Results in: {output_path}/")
+            print(f"[Nutrigenomics] Success! Results in: {output_path}/")
             return result
         
         except Exception as e:
-            print(f"[NutriGx] Unexpected error: {str(e)}", file=sys.stderr)
+            print(f"[Nutrigenomics] Unexpected error: {str(e)}", file=sys.stderr)
             return {
                 "status": "error",
                 "message": f"Unexpected error during analysis: {str(e)}",
@@ -280,7 +280,7 @@ def run_analysis(input_file: str, file_format: str = "auto") -> Dict[str, Any]:
     Returns:
         Result dictionary with analysis outputs
     """
-    adapter = NutriGxOpenClaw()
+    adapter = NutrigenomicsOpenClaw()
     return adapter.analyse_file(input_file, file_format=file_format)
 
 
@@ -289,7 +289,7 @@ if __name__ == "__main__":
     import argparse
     
     cli_parser = argparse.ArgumentParser(
-        description="NutriGx Advisor — OpenClaw Edition"
+        description="Nutrigenomics — OpenClaw Edition"
     )
     cli_parser.add_argument("--input", required=True, help="Path to genetic data file")
     cli_parser.add_argument("--output", help="Output directory")
@@ -297,7 +297,7 @@ if __name__ == "__main__":
     
     cli_args = cli_parser.parse_args()
     
-    adapter = NutriGxOpenClaw()
+    adapter = NutrigenomicsOpenClaw()
     result = adapter.analyse_file(
         input_file=cli_args.input,
         file_format=cli_args.format,

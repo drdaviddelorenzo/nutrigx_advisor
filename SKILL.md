@@ -1,6 +1,6 @@
-# NutriGx Advisor — Personalised Nutrition from Genetic Data
+# Nutrigenomics — Personalised Nutrition from Genetic Data
 
-**Skill ID**: `nutrigx-advisor`  
+**Skill ID**: `nutrigenomics`  
 **Version**: 0.1.0  
 **Status**: MVP  
 **Author**: David de Lorenzo (ClawBio Community) 
@@ -10,7 +10,7 @@
 
 ## What This Skill Does
 
-The NutriGx Advisor generates a **personalised nutrition report** from consumer
+The Nutrigenomics generates a **personalised nutrition report** from consumer
 genetic data (23andMe, AncestryDNA raw files or VCF). It interrogates a curated
 set of nutritionally-relevant SNPs drawn from GWAS Catalog, ClinVar, and
 peer-reviewed nutrigenomics literature, then translates genotype calls into
@@ -169,7 +169,7 @@ Exports to the output directory (not committed to the repo):
 openclaw "Generate my personalised nutrition report from genome.csv"
 
 # From VCF
-openclaw "Run NutriGx analysis on variants.vcf and flag any folate pathway risks"
+openclaw "Run Nutrigenomics analysis on variants.vcf and flag any folate pathway risks"
 
 # Targeted query
 openclaw "What does my APOE status mean for my saturated fat intake?"
@@ -183,9 +183,9 @@ python examples/generate_patient.py --run
 ## File Structure
 
 ```
-skills/nutrigx-advisor/
+skills/nutrigenomics/
 ├── SKILL.md                      ← this file (agent instructions)
-├── nutrigx_advisor.py            ← main entry point
+├── nutrigenomics.py            ← main entry point
 ├── parse_input.py                ← multi-format parser
 ├── extract_genotypes.py          ← SNP lookup engine
 ├── score_variants.py             ← risk scoring algorithm
@@ -196,14 +196,14 @@ skills/nutrigx-advisor/
 │   └── snp_panel.json            ← curated SNP definitions
 ├── tests/
 │   ├── synthetic_patient.csv     ← fixed 23andMe-format test data (for pytest)
-│   └── test_nutrigx.py           ← pytest suite
+│   └── test_nutrigenomics.py           ← pytest suite
 └── examples/
     ├── generate_patient.py       ← random patient generator (demo use)
     ├── data/                     ← generated patient files land here (gitignored)
     └── output/
-        ├── nutrigx_report.md     ← pre-rendered demo report
-        ├── nutrigx_radar.png     ← demo radar chart (nutrient risk profile)
-        └── nutrigx_heatmap.png   ← demo gene × nutrient heatmap
+        ├── nutrigenomics_report.md     ← pre-rendered demo report
+        ├── nutrigenomics_radar.png     ← demo radar chart (nutrient risk profile)
+        └── nutrigenomics_heatmap.png   ← demo gene × nutrient heatmap
 ```
 
 > **Note**: Runtime output directories and randomly generated patient files are

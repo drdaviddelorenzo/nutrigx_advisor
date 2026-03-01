@@ -1,11 +1,11 @@
 #!/usr/bin/env python3
 """
-nutrigx_advisor.py — NutriGx Advisor: Personalised Nutrition from Genetic Data
+nutrigenomics.py — Nutrigenomics: Personalised Nutrition from Genetic Data
 ClawBio Skill v0.1.0
 
 Usage:
-    python nutrigx_advisor.py --input genome.csv --output results/
-    python nutrigx_advisor.py --input variants.vcf --output results/ --format vcf
+    python nutrigenomics.py --input genome.csv --output results/
+    python nutrigenomics.py --input variants.vcf --output results/ --format vcf
 """
 
 import argparse
@@ -22,14 +22,14 @@ from repro_bundle import create_reproducibility_bundle
 
 def main():
     parser = argparse.ArgumentParser(
-        description="NutriGx Advisor — personalised nutrigenomics report from genetic data"
+        description="Nutrigenomics — personalised nutrigenomics report from genetic data"
     )
     parser.add_argument(
         "--input", required=True,
         help="Path to genetic data file (23andMe .txt/.csv, AncestryDNA .csv, or .vcf)"
     )
     parser.add_argument(
-        "--output", default="nutrigx_results",
+        "--output", default="nutrigenomics_results",
         help="Output directory (created if absent)"
     )
     parser.add_argument(
@@ -66,20 +66,20 @@ def main():
         print(f"[ERROR] Input file not found: {input_path}", file=sys.stderr)
         sys.exit(1)
 
-    print(f"[NutriGx] Parsing input: {input_path}")
+    print(f"[Nutrigenomics] Parsing input: {input_path}")
     genotype_table = parse_genetic_file(str(input_path), fmt=args.format)
-    print(f"[NutriGx] Loaded {len(genotype_table):,} variants")
+    print(f"[Nutrigenomics] Loaded {len(genotype_table):,} variants")
 
-    print("[NutriGx] Extracting SNP genotypes from panel ...")
+    print("[Nutrigenomics] Extracting SNP genotypes from panel ...")
     snp_calls = extract_snp_genotypes(genotype_table, snp_panel)
 
     present = sum(1 for v in snp_calls.values() if v["status"] == "found")
-    print(f"[NutriGx] Panel coverage: {present}/{len(snp_panel)} SNPs found")
+    print(f"[Nutrigenomics] Panel coverage: {present}/{len(snp_panel)} SNPs found")
 
-    print("[NutriGx] Computing nutrient risk scores ...")
+    print("[Nutrigenomics] Computing nutrient risk scores ...")
     risk_scores = compute_nutrient_risk_scores(snp_calls, snp_panel)
 
-    print("[NutriGx] Generating report ...")
+    print("[Nutrigenomics] Generating report ...")
     report_path = generate_report(
         snp_calls=snp_calls,
         risk_scores=risk_scores,
@@ -89,7 +89,7 @@ def main():
         input_file=str(input_path)
     )
 
-    print("[NutriGx] Creating reproducibility bundle ...")
+    print("[Nutrigenomics] Creating reproducibility bundle ...")
     create_reproducibility_bundle(
         input_file=str(input_path),
         output_dir=str(output_dir),
@@ -97,8 +97,8 @@ def main():
         args=vars(args)
     )
 
-    print(f"\n[NutriGx] Done. Report: {report_path}")
-    print(f"[NutriGx] Results in: {output_dir}/")
+    print(f"\n[Nutrigenomics] Done. Report: {report_path}")
+    print(f"[Nutrigenomics] Results in: {output_dir}/")
 
 
 if __name__ == "__main__":

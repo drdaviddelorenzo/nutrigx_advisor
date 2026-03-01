@@ -1,6 +1,6 @@
-# NutriGx Advisor — OpenClaw Implementation Guide
+# Nutrigenomics — OpenClaw Implementation Guide
 
-This document provides step-by-step instructions for submitting and deploying NutriGx Advisor to the OpenClaw platform.
+This document provides step-by-step instructions for submitting and deploying Nutrigenomics to the OpenClaw platform.
 
 ---
 
@@ -22,7 +22,7 @@ This document provides step-by-step instructions for submitting and deploying Nu
 ## File Structure for Submission
 
 ```
-nutrigx-advisor-openclaw/
+nutrigenomics-openclaw/
 ├── openclaw.json                 ← Skill manifest (REQUIRED)
 ├── openclaw_adapter.py           ← Entry point (REQUIRED)
 ├── SKILL_OPENCLAW.md             ← User documentation (REQUIRED)
@@ -30,7 +30,7 @@ nutrigx-advisor-openclaw/
 ├── IMPLEMENTATION.md             ← This file
 ├── LICENSE                       ← MIT License
 ├── requirements.txt              ← Python dependencies
-├── nutrigx_advisor.py            ← Core analysis engine
+├── nutrigenomics.py            ← Core analysis engine
 ├── parse_input.py                ← Input parser (23andMe, AncestryDNA, VCF)
 ├── extract_genotypes.py          ← SNP lookup
 ├── score_variants.py             ← Risk scoring algorithm
@@ -40,7 +40,7 @@ nutrigx-advisor-openclaw/
 │   └── snp_panel.json            ← 58 SNP definitions
 ├── tests/
 │   ├── synthetic_patient.csv     ← Test data
-│   └── test_nutrigx.py           ← Unit tests
+│   └── test_nutrigenomics.py           ← Unit tests
 └── examples/
     ├── generate_patient.py       ← Demo patient generator
     └── output/                   ← Pre-rendered example outputs
@@ -63,7 +63,7 @@ pip install -r requirements.txt
 python examples/generate_patient.py --run
 
 # Run unit tests
-pytest tests/test_nutrigx.py -v
+pytest tests/test_nutrigenomics.py -v
 ```
 
 ### 3. Test OpenClaw Adapter
@@ -77,7 +77,7 @@ python openclaw_adapter.py --input tests/test_patient.csv --format 23andme --out
 
 # Check output
 ls -la /tmp/test_results/
-cat /tmp/test_results/nutrigx_report.md
+cat /tmp/test_results/nutrigenomics_report.md
 ```
 
 ### 4. Validate Manifest
@@ -138,10 +138,10 @@ The adapter returns:
 {
     "status": "success",
     "message": "Analysis complete",
-    "report_path": "/path/to/nutrigx_report.md",
+    "report_path": "/path/to/nutrigenomics_report.md",
     "figures": {
-        "radar": "/path/to/nutrigx_radar.png",
-        "heatmap": "/path/to/nutrigx_heatmap.png"
+        "radar": "/path/to/nutrigenomics_radar.png",
+        "heatmap": "/path/to/nutrigenomics_heatmap.png"
     },
     "summary": "Executive summary...",
     "risk_scores": {...}
@@ -160,9 +160,9 @@ OpenClaw will:
 ### Python Function Call
 
 ```python
-from openclaw_adapter import NutriGxOpenClaw
+from openclaw_adapter import NutrigenomicsOpenClaw
 
-adapter = NutriGxOpenClaw()
+adapter = NutrigenomicsOpenClaw()
 result = adapter.analyse_file(
     input_file="/path/to/genome.csv",
     file_format="auto",
@@ -267,7 +267,7 @@ import openclaw_adapter
 import unittest.mock as mock
 
 with mock.patch('urllib.request.urlopen') as mock_urlopen:
-    adapter = openclaw_adapter.NutriGxOpenClaw()
+    adapter = openclaw_adapter.NutrigenomicsOpenClaw()
     # Run analysis
     # Assert mock_urlopen not called
 "
@@ -305,10 +305,10 @@ Expected performance on typical consumer genetic data:
 
 The adapter writes to stdout:
 ```
-[NutriGx] Parsing genetic file: genome.csv
-[NutriGx] Loaded 500,000 variants
-[NutriGx] Extracting SNP genotypes from panel...
-[NutriGx] Panel coverage: 58/58 SNPs (100.0%)
+[Nutrigenomics] Parsing genetic file: genome.csv
+[Nutrigenomics] Loaded 500,000 variants
+[Nutrigenomics] Extracting SNP genotypes from panel...
+[Nutrigenomics] Panel coverage: 58/58 SNPs (100.0%)
 ```
 
 OpenClaw should capture these for user feedback.
@@ -366,7 +366,7 @@ The `data/snp_panel.json` is the versioned source of truth. To add SNPs:
 
 Users can report issues via:
 - OpenClaw platform: In-app feedback
-- GitHub: [nutrigx-advisor/issues](https://github.com/clawbio/nutrigx-advisor/issues)
+- GitHub: [nutrigenomics/issues](https://github.com/clawbio/nutrigenomics/issues)
 - Email: david@nutrigenomics.dev
 
 ### Regular Maintenance
@@ -431,7 +431,7 @@ Based on user feedback:
 ## Contact & Support
 
 - **Author**: David de Lorenzo (@drdaviddelorenzo)
-- **GitHub**: [nutrigx-advisor](https://github.com/clawbio/nutrigx-advisor)
+- **GitHub**: [nutrigenomics](https://github.com/clawbio/nutrigenomics)
 - **Email**: david@nutrigenomics.dev
 - **OpenClaw**: In-app support channel
 

@@ -1,5 +1,5 @@
 """
-generate_report.py — Markdown report + matplotlib figures for NutriGx Advisor
+generate_report.py — Markdown report + matplotlib figures for Nutrigenomics
 """
 
 import os
@@ -97,10 +97,10 @@ def generate_report(snp_calls, risk_scores, snp_panel, output_dir, figures=True,
 
     # ── Header ────────────────────────────────────────────────────────────────
     lines += [
-        "# NutriGx Personalised Nutrition Report",
+        "# Nutrigenomics Personalised Nutrition Report",
         "",
         f"**Generated**: {timestamp}  ",
-        f"**Tool**: ClawBio NutriGx Advisor v0.1.0  ",
+        f"**Tool**: ClawBio Nutrigenomics v0.1.0  ",
         f"**Input**: `{Path(input_file).name}`  ",
         "",
         "> **Disclaimer**: This report is for research and educational purposes only. "
@@ -216,12 +216,12 @@ def generate_report(snp_calls, risk_scores, snp_panel, output_dir, figures=True,
         "## References",
         "",
         "SNP-nutrient associations sourced from GWAS Catalog, ClinVar, and CPIC guidelines.",
-        "Full citations available in `skills/nutrigx-advisor/SKILL.md`.",
+        "Full citations available in `skills/nutrigenomics/SKILL.md`.",
         "",
     ]
 
     report_text = "\n".join(lines)
-    report_path = output_dir / "nutrigx_report.md"
+    report_path = output_dir / "nutrigenomics_report.md"
     report_path.write_text(report_text)
 
     if figures:
@@ -238,7 +238,7 @@ def _generate_figures(risk_scores: dict, output_dir: Path):
         matplotlib.use("Agg")
         import matplotlib.pyplot as plt
     except ImportError:
-        print("[NutriGx] matplotlib/numpy not available — skipping figures")
+        print("[Nutrigenomics] matplotlib/numpy not available — skipping figures")
         return
 
     # ── Radar Chart ───────────────────────────────────────────────────────────
@@ -268,9 +268,9 @@ def _generate_figures(risk_scores: dict, output_dir: Path):
     for r, color, alpha in [(3.5, "green", 0.05), (6.5, "orange", 0.05), (10, "red", 0.05)]:
         ax.fill_between(angles, 0, r, alpha=alpha, color=color)
 
-    plt.title("NutriGx Nutrient Risk Profile", size=14, fontweight="bold", pad=20)
+    plt.title("Nutrigenomics Nutrient Risk Profile", size=14, fontweight="bold", pad=20)
     plt.tight_layout()
-    fig.savefig(output_dir / "nutrigx_radar.png", dpi=150, bbox_inches="tight")
+    fig.savefig(output_dir / "nutrigenomics_radar.png", dpi=150, bbox_inches="tight")
     plt.close()
 
     # ── Heatmap ───────────────────────────────────────────────────────────────
@@ -298,7 +298,7 @@ def _generate_figures(risk_scores: dict, output_dir: Path):
                         cbar_kws={"label": "Risk Score (0=Ref, 0.5=Het, 1=Hom Risk)"})
             ax.set_title("Gene × Nutrient Risk Heatmap", fontsize=13, fontweight="bold")
             plt.tight_layout()
-            fig.savefig(output_dir / "nutrigx_heatmap.png", dpi=150, bbox_inches="tight")
+            fig.savefig(output_dir / "nutrigenomics_heatmap.png", dpi=150, bbox_inches="tight")
             plt.close()
     except ImportError:
         pass

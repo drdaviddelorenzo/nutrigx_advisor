@@ -1,6 +1,6 @@
-# Migration Guide: NutriGx Advisor from ClawBio to OpenClaw
+# Migration Guide: Nutrigenomics from ClawBio to OpenClaw
 
-This document explains the changes made to adapt the NutriGx Advisor skill from ClawBio to the OpenClaw platform.
+This document explains the changes made to adapt the Nutrigenomics skill from ClawBio to the OpenClaw platform.
 
 ---
 
@@ -31,7 +31,7 @@ The core analysis engine remains **identical** — all the scientific logic, SNP
 ### Files Unchanged
 
 All core analysis modules remain identical:
-- `nutrigx_advisor.py` — Main entry point
+- `nutrigenomics.py` — Main entry point
 - `parse_input.py` — Genetic file parser
 - `extract_genotypes.py` — SNP lookup engine
 - `score_variants.py` — Risk scoring algorithm
@@ -49,7 +49,7 @@ All core analysis modules remain identical:
 
 ```python
 # Direct entry point via CLI
-python nutrigx_advisor.py --input genome.csv --output results/
+python nutrigenomics.py --input genome.csv --output results/
 
 # Arguments:
 # - File paths provided directly
@@ -90,10 +90,10 @@ result = run_analysis(
 
 ### 1. Entry Point: `openclaw_adapter.py`
 
-**New class**: `NutriGxOpenClaw`
+**New class**: `NutrigenomicsOpenClaw`
 
 ```python
-adapter = NutriGxOpenClaw()
+adapter = NutrigenomicsOpenClaw()
 result = adapter.analyse_file(input_file, file_format)
 ```
 
@@ -128,7 +128,7 @@ result = adapter.analyse_file(input_file, file_format)
 **Defines skill metadata**:
 ```json
 {
-    "skill_id": "nutrigx-advisor",
+    "skill_id": "nutrigenomics",
     "entry_point": "openclaw_adapter:run_analysis",
     "input_schema": {...},
     "output_schema": {...},
@@ -181,7 +181,7 @@ reportlab>=4.0.0
 
 **ClawBio**: File path required
 ```bash
-python nutrigx_advisor.py --input /path/to/genome.csv
+python nutrigenomics.py --input /path/to/genome.csv
 ```
 
 **OpenClaw**: File path provided by platform (web upload)
@@ -196,16 +196,16 @@ run_analysis(input_file="/tmp/uploads/genome_12345.csv")
 **ClawBio**: Files written to disk
 ```
 results/
-├── nutrigx_report.md
-├── nutrigx_radar.png
-├── nutrigx_heatmap.png
+├── nutrigenomics_report.md
+├── nutrigenomics_radar.png
+├── nutrigenomics_heatmap.png
 └── commands.sh
 ```
 
 **OpenClaw**: Return values + file paths
 ```python
 {
-    "report_path": "/tmp/results/nutrigx_report.md",
+    "report_path": "/tmp/results/nutrigenomics_report.md",
     "figures": {"radar": "...", "heatmap": "..."},
     ...
 }
@@ -266,7 +266,7 @@ return {
 
 If you're running ClawBio code on OpenClaw:
 
-- [ ] Use `openclaw_adapter.py` instead of `nutrigx_advisor.py`
+- [ ] Use `openclaw_adapter.py` instead of `nutrigenomics.py`
 - [ ] Call `run_analysis()` function, not CLI
 - [ ] Check result dict for `status` field
 - [ ] Handle errors via `result["message"]`, not exceptions
@@ -298,7 +298,7 @@ Difference: +0.3 seconds (~2%)
 ### Unit Tests (Unchanged)
 
 ```bash
-pytest tests/test_nutrigx.py -v
+pytest tests/test_nutrigenomics.py -v
 # All original tests still pass
 ```
 
@@ -313,7 +313,7 @@ result = run_analysis(
 )
 
 assert result["status"] == "success"
-assert "nutrigx_report.md" in result["report_path"]
+assert "nutrigenomics_report.md" in result["report_path"]
 assert len(result["risk_scores"]) > 0
 ```
 
@@ -331,7 +331,7 @@ assert len(result["risk_scores"]) > 0
 ### ClawBio Deployment
 
 ```bash
-1. Clone repository into ~/ClawBio/skills/nutrigx-advisor/
+1. Clone repository into ~/ClawBio/skills/nutrigenomics/
 2. Install dependencies: pip install -r requirements.txt
 3. OpenClaw auto-detects SKILL.md
 4. Invoke: openclaw "Generate nutrition report..."
@@ -399,7 +399,7 @@ rm SKILL_OPENCLAW.md
 use SKILL.md instead
 
 # Use original entry point
-python nutrigx_advisor.py --input genome.csv
+python nutrigenomics.py --input genome.csv
 
 # Remove OpenClaw files
 rm openclaw_adapter.py openclaw.json
@@ -436,4 +436,4 @@ The original code is unmodified, so switching is seamless.
 
 ---
 
-*This migration successfully brings NutriGx Advisor to OpenClaw while maintaining 100% scientific integrity and backward compatibility with ClawBio.*
+*This migration successfully brings Nutrigenomics to OpenClaw while maintaining 100% scientific integrity and backward compatibility with ClawBio.*

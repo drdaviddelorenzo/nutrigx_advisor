@@ -1,4 +1,4 @@
-# NutriGx Advisor
+# Nutrigenomics
 
 **Personalised nutrition recommendations from your genetic data**
 
@@ -8,9 +8,9 @@
 
 ---
 
-## 🧬 What is NutriGx Advisor?
+## 🧬 What is Nutrigenomics?
 
-NutriGx Advisor generates **personalised nutrition recommendations** based on your genetic profile. Upload your DNA file from 23andMe, AncestryDNA, or as a VCF file, and receive:
+Nutrigenomics generates **personalised nutrition recommendations** based on your genetic profile. Upload your DNA file from 23andMe, AncestryDNA, or as a VCF file, and receive:
 
 - 📊 **Nutrient Risk Assessment** — How your genes affect nutrient absorption and metabolism
 - 🔍 **Gene-by-Gene Breakdown** — 40+ genes across 8 nutrient categories
@@ -41,7 +41,7 @@ NutriGx Advisor generates **personalised nutrition recommendations** based on yo
 Once published to ClawHub:
 
 ```bash
-clawhub install nutrigx-advisor
+clawhub install nutrigenomics
 ```
 
 Then tell OpenClaw: **"Generate my personalised nutrition report"** and upload your genetic data.
@@ -50,8 +50,8 @@ Then tell OpenClaw: **"Generate my personalised nutrition report"** and upload y
 
 1. **Clone this repository**:
    ```bash
-   git clone https://github.com/drdaviddelorenzo/nutrigx-advisor.git
-   cd nutrigx-advisor
+   git clone https://github.com/drdaviddelorenzo/nutrigenomics.git
+   cd nutrigenomics
    ```
 
 2. **Install dependencies**:
@@ -69,9 +69,9 @@ Then tell OpenClaw: **"Generate my personalised nutrition report"** and upload y
 
 4. **View results**:
    ```bash
-   cat results/nutrigx_report.md
-   open results/nutrigx_radar.png
-   open results/nutrigx_heatmap.png
+   cat results/nutrigenomics_report.md
+   open results/nutrigenomics_radar.png
+   open results/nutrigenomics_heatmap.png
    ```
 
 ---
@@ -126,7 +126,7 @@ python examples/generate_patient.py --run
 Run the test suite:
 
 ```bash
-pytest tests/test_nutrigx.py -v
+pytest tests/test_nutrigenomics.py -v
 ```
 
 Generate a synthetic patient for testing:
@@ -173,7 +173,7 @@ See [ATTRIBUTION.md](ATTRIBUTION.md) for more information.
 
 ## ⚠️ Important Disclaimer
 
-NutriGx Advisor provides **educational, research-oriented analysis**. It does **NOT**:
+Nutrigenomics provides **educational, research-oriented analysis**. It does **NOT**:
 - Constitute medical diagnosis
 - Replace healthcare provider consultation
 - Provide medical advice
@@ -221,21 +221,21 @@ This project is licensed under the **MIT License** — see [LICENSE](LICENSE) fi
 
 ## 📖 How to Cite
 
-If you use NutriGx Advisor in research or education:
+If you use Nutrigenomics in research or education:
 
 ### BibTeX
 ```bibtex
-@software{delorenzo2026nutrigx,
+@software{delorenzo2026nutrigenomics,
   author = {de Lorenzo, David},
-  title = {NutriGx Advisor: Personalised Nutrition from Genetic Data},
+  title = {Nutrigenomics: Personalised Nutrition from Genetic Data},
   year = {2026},
-  url = {https://github.com/drdaviddelorenzo/nutrigx-advisor},
+  url = {https://github.com/drdaviddelorenzo/nutrigenomics},
   version = {0.2.0}
 }
 ```
 
 ### APA
-de Lorenzo, D. (2026). *NutriGx Advisor: Personalised nutrition from genetic data* (Version 0.2.0) [Software]. Retrieved from https://github.com/drdaviddelorenzo/nutrigx-advisor
+de Lorenzo, D. (2026). *Nutrigenomics: Personalised nutrition from genetic data* (Version 0.2.0) [Software]. Retrieved from https://github.com/drdaviddelorenzo/nutrigenomics
 
 See [ATTRIBUTION.md](ATTRIBUTION.md) for more citation formats.
 
@@ -272,7 +272,7 @@ See [ATTRIBUTION.md](ATTRIBUTION.md) for more citation formats.
 
 ## 🔗 Links
 
-- **GitHub Repository**: https://github.com/drdaviddelorenzo/nutrigx-advisor
+- **GitHub Repository**: https://github.com/drdaviddelorenzo/nutrigenomics
 - **My Website**: https://drdaviddelorenzo.github.io
 - **OpenClaw**: https://openclaw.ai
 - **ClawHub Registry**: https://clawhub.com
@@ -281,7 +281,7 @@ See [ATTRIBUTION.md](ATTRIBUTION.md) for more citation formats.
 
 <div align="center">
 
-**NutriGx Advisor: Democratising personalised nutrition through open science and genetic literacy**
+**Nutrigenomics: Democratising personalised nutrition through open science and genetic literacy**
 
 Made with 🧬 and ❤️ for health-conscious individuals everywhere
 

@@ -1,6 +1,6 @@
 """
-test_nutrigx.py — Automated test suite for NutriGx Advisor
-Run with: pytest tests/test_nutrigx.py -v
+test_nutrigenomics.py — Automated test suite for Nutrigenomics
+Run with: pytest tests/test_nutrigenomics.py -v
 
 Uses a FIXED synthetic patient (synthetic_patient.csv) with known genotypes
 so that all assertions are deterministic and reproducible. This file is NOT

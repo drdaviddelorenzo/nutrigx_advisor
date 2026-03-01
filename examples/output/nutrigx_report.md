@@ -1,7 +1,7 @@
-# NutriGx Personalised Nutrition Report
+# Nutrigenomics Personalised Nutrition Report
 
 **Generated**: 2026-02-27 12:25 UTC  
-**Tool**: ClawBio NutriGx Advisor v0.1.0  
+**Tool**: ClawBio Nutrigenomics v0.1.0  
 **Input**: `synthetic_patient.csv` (demo — fixed synthetic data)  
 
 > **Disclaimer**: This report is for research and educational purposes only. It does not constitute medical advice. Consult a registered dietitian or clinical geneticist before making significant dietary changes or starting supplements.
@@ -42,9 +42,9 @@ Analysed **28** of **28** panel SNPs from your genetic data.
 | Fat Metabolism | 1.57 | 🟢 Low |
 | Vitamin C | 0.0 | 🟢 Low |
 
-![NutriGx Nutrient Risk Profile](nutrigx_radar.png)
+![Nutrigenomics Nutrient Risk Profile](nutrigenomics_radar.png)
 
-![Gene × Nutrient Risk Heatmap](nutrigx_heatmap.png)
+![Gene × Nutrient Risk Heatmap](nutrigenomics_heatmap.png)
 
 ---
 
@@ -267,4 +267,4 @@ in the output directory to reproduce this analysis on any machine.
 ## References
 
 SNP-nutrient associations sourced from GWAS Catalog, ClinVar, and CPIC guidelines.
-Full citations available in `skills/nutrigx-advisor/SKILL.md`.
+Full citations available in `skills/nutrigenomics/SKILL.md`.

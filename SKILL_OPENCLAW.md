@@ -1,6 +1,6 @@
-# NutriGx Advisor — Personalised Nutrition from Genetic Data
+# Nutrigenomics — Personalised Nutrition from Genetic Data
 
-**Skill ID**: `nutrigx-advisor`  
+**Skill ID**: `nutrigenomics`  
 **Platform**: OpenClaw  
 **Version**: 0.2.0-openclaw  
 **Status**: Ready for Community  
@@ -11,7 +11,7 @@
 
 ## What This Skill Does
 
-The NutriGx Advisor generates a **personalised nutrition report** from consumer genetic data. Upload your DNA file (23andMe, AncestryDNA, or VCF format), and receive:
+The Nutrigenomics generates a **personalised nutrition report** from consumer genetic data. Upload your DNA file (23andMe, AncestryDNA, or VCF format), and receive:
 
 ✅ **Personalised nutrition recommendations** based on your genetic profile  
 ✅ **Risk assessment** for nutrient absorption and metabolism  
@@ -45,7 +45,7 @@ You'll need raw genetic data from one of these sources:
 
 ### Step 3: Get Your Report
 
-The NutriGx Advisor will:
+The Nutrigenomics will:
 
 1. Parse your genetic data securely (locally, no uploads to external servers)
 2. Extract relevant SNPs from your genome
@@ -54,9 +54,9 @@ The NutriGx Advisor will:
 5. Provide downloadable results
 
 **Expected output:**
-- `nutrigx_report.md` — Full nutrition report (Markdown)
-- `nutrigx_radar.png` — Nutrient risk profile chart
-- `nutrigx_heatmap.png` — Gene-nutrient interaction matrix
+- `nutrigenomics_report.md` — Full nutrition report (Markdown)
+- `nutrigenomics_radar.png` — Nutrient risk profile chart
+- `nutrigenomics_heatmap.png` — Gene-nutrient interaction matrix
 - `commands.sh` — Reproducibility documentation
 
 ---
@@ -207,7 +207,7 @@ This skill is educational and research-oriented, not a medical diagnostic tool.
 
 Have suggestions for SNPs to add? Found a bug? Want to contribute?
 
-- **GitHub**: [ClawBio/nutrigx-advisor](https://github.com/clawbio/nutrigx-advisor)
+- **GitHub**: [ClawBio/nutrigenomics](https://github.com/clawbio/nutrigenomics)
 - **GitHub**: [@drdaviddelorenzo](https://github.com/drdaviddelorenzo)
 - **Website**: https://drdaviddelorenzo.github.io
 - **Email**: david@drdaviddelorenzo.dev
@@ -230,4 +230,4 @@ Have suggestions for SNPs to add? Found a bug? Want to contribute?
 
 ---
 
-*NutriGx Advisor: Democratising personalised nutrition through open science and genetic literacy.*
+*Nutrigenomics: Democratising personalised nutrition through open science and genetic literacy.*

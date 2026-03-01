@@ -1,8 +1,8 @@
-# NutriGx Advisor for OpenClaw
+# Nutrigenomics for OpenClaw
 
 **Transform your genetic data into actionable nutrition insights.**
 
-Generate personalised nutrition recommendations based on your DNA in minutes. NutriGx Advisor analyzes 40+ genes affecting how your body metabolises nutrients, absorbs vitamins, and responds to dietary compounds.
+Generate personalised nutrition recommendations based on your DNA in minutes. Nutrigenomics analyzes 40+ genes affecting how your body metabolises nutrients, absorbs vitamins, and responds to dietary compounds.
 
 ## 🚀 Quick Start
 
@@ -35,7 +35,7 @@ Within seconds, you'll receive:
 
 ## 🧬 What Gets Analysed?
 
-NutriGx Advisor examines genes in these key areas:
+Nutrigenomics examines genes in these key areas:
 
 ### Micronutrient Metabolism
 - **MTHFR** (Folate & B12 processing)
@@ -173,17 +173,17 @@ rs12562034,1,758311,A,G
 
 After analysis, you'll receive:
 
-1. **nutrigx_report.md** — Full personalised report (Markdown)
+1. **nutrigenomics_report.md** — Full personalised report (Markdown)
    - Executive summary
    - Per-nutrient gene tables and interpretations
    - Actionable dietary recommendations
    - Supplement interaction guidance
 
-2. **nutrigx_radar.png** — Nutrient risk profile radar chart
+2. **nutrigenomics_radar.png** — Nutrient risk profile radar chart
    - Visual overview of your 8 nutrient categories
    - Easy to share with healthcare providers
 
-3. **nutrigx_heatmap.png** — Gene-nutrient interaction matrix
+3. **nutrigenomics_heatmap.png** — Gene-nutrient interaction matrix
    - Which genes affect which nutrients
    - Color-coded risk levels
 
@@ -269,7 +269,7 @@ Users should consult these authoritative sources and healthcare providers for sp
 
 Found a bug? Suggestions for SNPs to add? Want to contribute?
 
-- **GitHub Issues**: [nutrigx-advisor/issues](https://github.com/clawbio/nutrigx-advisor/issues)
+- **GitHub Issues**: [nutrigenomics/issues](https://github.com/clawbio/nutrigenomics/issues)
 - **GitHub Discussions**: Community-driven questions and feature requests
 - **GitHub**: [@drdaviddelorenzo](https://github.com/drdaviddelorenzo)
 - **Website**: https://drdaviddelorenzo.github.io
@@ -280,7 +280,7 @@ Found a bug? Suggestions for SNPs to add? Want to contribute?
 
 ## 📜 License
 
-NutriGx Advisor is **free and open source** under the MIT License. You're free to:
+Nutrigenomics is **free and open source** under the MIT License. You're free to:
 - ✅ Use it personally
 - ✅ Modify the code
 - ✅ Redistribute it
@@ -304,10 +304,10 @@ See `LICENSE` file for details.
 - 📚 [Full Documentation](SKILL_OPENCLAW.md)
 - 🧬 [SNP Panel Reference](data/snp_panel.json)
 - 🧪 [Test Data](tests/synthetic_patient.csv)
-- 📖 [Example Report](examples/output/nutrigx_report.md)
+- 📖 [Example Report](examples/output/nutrigenomics_report.md)
 
 ---
 
-**NutriGx Advisor: Democratising personalised nutrition through open science and genetic literacy.**
+**Nutrigenomics: Democratising personalised nutrition through open science and genetic literacy.**
 
 *Made with 🧬 and ❤️ for health-conscious individuals everywhere.*

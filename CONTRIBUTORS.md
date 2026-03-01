@@ -1,8 +1,8 @@
 # Contributors
 
-## NutriGx Advisor Contributors
+## Nutrigenomics Contributors
 
-This document recognises the contributions of individuals and organisations to the NutriGx Advisor project.
+This document recognises the contributions of individuals and organisations to the Nutrigenomics project.
 
 ---
 
@@ -84,7 +84,7 @@ This document recognises the contributions of individuals and organisations to t
 
 ## Research Use & Feedback
 
-### Studies Using NutriGx Advisor
+### Studies Using Nutrigenomics
 *Your research using this tool? Let us know!*
 
 (Citation and feedback appreciated)
@@ -213,7 +213,7 @@ Violations may result in:
 
 ## Contributor License Agreement
 
-By contributing to NutriGx Advisor, you agree that:
+By contributing to Nutrigenomics, you agree that:
 
 1. **Your contributions** are your original work or properly licensed
 2. **You grant** a perpetual, worldwide license under the MIT License
@@ -286,12 +286,12 @@ Date: YYYY-MM-DD
 ## Questions About Attribution?
 
 - **Email**: david@nutrigenomics.dev
-- **GitHub Issues**: https://github.com/clawbio/nutrigx-advisor/issues
-- **Discussions**: https://github.com/clawbio/nutrigx-advisor/discussions
+- **GitHub Issues**: https://github.com/clawbio/nutrigenomics/issues
+- **Discussions**: https://github.com/clawbio/nutrigenomics/discussions
 
 ---
 
 *Last updated: February 28, 2026*
-*NutriGx Advisor v0.2.0-openclaw*
+*Nutrigenomics v0.2.0-openclaw*
 
 **Thank you for making personalised nutrigenomics accessible to everyone! 🧬💚**

@@ -1,6 +1,6 @@
 # Changelog
 
-All notable changes to NutriGx Advisor are documented in this file.
+All notable changes to Nutrigenomics are documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
@@ -13,7 +13,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 #### OpenClaw Adaptation
 - **`openclaw_adapter.py`** — Function-based entry point for OpenClaw platform
-  - `NutriGxOpenClaw` class wraps core analysis
+  - `NutrigenomicsOpenClaw` class wraps core analysis
   - `run_analysis()` entry point for OpenClaw integration
   - Structured JSON output with status, summary, risk scores, and file paths
   - Comprehensive error handling with user-friendly messages
@@ -304,7 +304,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 See `MIGRATION.md` for detailed instructions:
 - No code changes needed for existing analysis
-- Use new `openclaw_adapter.py` instead of `nutrigx_advisor.py`
+- Use new `openclaw_adapter.py` instead of `nutrigenomics.py`
 - Same results, improved user interface
 
 ---
