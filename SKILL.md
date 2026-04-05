@@ -157,8 +157,8 @@ Outputs a structured Markdown report with:
 Exports to the output directory (not committed to the repo):
 - `README_reproducibility.txt` — step-by-step instructions to reproduce the analysis manually
 - `environment.yml` — pinned conda environment
-- `checksums.txt` — SHA-256 checksums of input and output files
-- `provenance.json` — timestamp, version, and input filename
+- `checksums.txt` — SHA-256 checksums of the SNP panel and output report (input file intentionally excluded to avoid persisting a fingerprint of genetic data)
+- `provenance.json` — timestamp, version, and format arguments (input filename intentionally omitted)
 
 **Note**: No executable scripts are generated. The reproducibility bundle contains
 only text files for documentation and integrity verification.
@@ -194,7 +194,6 @@ skills/nutrigenomics/
 ├── score_variants.py             ← risk scoring algorithm
 ├── generate_report.py            ← Markdown + figures
 ├── repro_bundle.py               ← reproducibility export
-├── .gitignore
 ├── data/
 │   └── snp_panel.json            ← curated SNP definitions
 ├── tests/
@@ -210,7 +209,7 @@ skills/nutrigenomics/
 ```
 
 > **Note**: Runtime output directories and randomly generated patient files are
-> excluded from version control via `.gitignore`. Only the pre-rendered demo
+> excluded from version control. Only the pre-rendered demo
 > report in `examples/output/` is committed.
 
 ---
