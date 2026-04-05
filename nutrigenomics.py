@@ -18,6 +18,7 @@ from extract_genotypes import extract_snp_genotypes
 from score_variants import compute_nutrient_risk_scores
 from generate_report import generate_report
 from repro_bundle import create_reproducibility_bundle
+from path_safety import validate_input_file, validate_output_dir, validate_panel_file
 
 
 def main():
@@ -46,24 +47,26 @@ def main():
     )
     args = parser.parse_args()
 
-    output_dir = Path(args.output)
-    output_dir.mkdir(parents=True, exist_ok=True)
+    workspace_root = Path.cwd().resolve()
+    output_dir = validate_output_dir(args.output, workspace_root)
 
     # Resolve SNP panel
+    skill_root = Path(__file__).parent.resolve()
     panel_path = (
-        Path(args.panel) if args.panel
-        else Path(__file__).parent / "data" / "snp_panel.json"
+        validate_panel_file(args.panel, skill_root) if args.panel
+        else (skill_root / "data" / "snp_panel.json").resolve()
     )
     if not panel_path.exists():
         print(f"[ERROR] SNP panel not found at {panel_path}", file=sys.stderr)
         sys.exit(1)
 
-    with open(panel_path) as f:
+    with open(panel_path, encoding="utf-8") as f:
         snp_panel = json.load(f)
 
-    input_path = Path(args.input)
-    if not input_path.exists():
-        print(f"[ERROR] Input file not found: {input_path}", file=sys.stderr)
+    try:
+        input_path = validate_input_file(args.input)
+    except Exception as exc:
+        print(f"[ERROR] {exc}", file=sys.stderr)
         sys.exit(1)
 
     print(f"[Nutrigenomics] Parsing input: {input_path}")

@@ -1,6 +1,6 @@
 """
 repro_bundle.py — Creates reproducibility artefacts for Nutrigenomics
-Outputs: commands.sh, environment.yml, checksums.txt
+Outputs: README_reproducibility.txt, environment.yml, checksums.txt
 """
 
 import hashlib
@@ -37,32 +37,29 @@ def sha256_file(filepath: str) -> str:
 
 
 def create_reproducibility_bundle(input_file: str, output_dir: str, panel_path: str, args: dict):
-    output_dir = Path(output_dir)
+    output_dir = Path(output_dir).resolve()
     timestamp = datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
 
-    # commands.sh
+    # README_reproducibility.txt
     cmd_args = " ".join(f"--{k.replace('_', '-')} {v}" for k, v in args.items() if v and k != "synthetic")
-    commands = f"""#!/usr/bin/env bash
-# Nutrigenomics — Reproducibility Script
-# Generated: {timestamp}
-# Nutrigenomics v0.2.0
+    instructions = f"""Nutrigenomics reproducibility notes
+Generated: {timestamp}
+Version: 0.2.3
 
-set -euo pipefail
+This skill does not generate executable scripts. To reproduce the analysis manually:
+1. Create the conda environment from environment.yml
+2. Run: python nutrigenomics.py {cmd_args}
+3. Verify outputs with checksums.txt
 
-# 1. Create conda environment
-conda env create -f environment.yml
-conda activate nutrigenomics
-
-# 2. Run analysis
-python nutrigenomics.py {cmd_args}
-
-# 3. Verify checksums
-sha256sum -c checksums.txt
+Local-only safety notes:
+- no network access is required
+- input files must be local .txt, .csv, or .vcf files
+- outputs are written only inside the chosen working directory
 """
-    (output_dir / "commands.sh").write_text(commands)
+    (output_dir / "README_reproducibility.txt").write_text(instructions, encoding="utf-8")
 
     # environment.yml
-    (output_dir / "environment.yml").write_text(CONDA_ENV)
+    (output_dir / "environment.yml").write_text(CONDA_ENV, encoding="utf-8")
 
     # checksums.txt
     files_to_checksum = [
@@ -75,7 +72,7 @@ sha256sum -c checksums.txt
         chk = sha256_file(fp)
         checksum_lines.append(f"{chk}  {Path(fp).name}")
 
-    (output_dir / "checksums.txt").write_text("\n".join(checksum_lines) + "\n")
+    (output_dir / "checksums.txt").write_text("\n".join(checksum_lines) + "\n", encoding="utf-8")
 
     # provenance.json
     provenance = {
@@ -85,4 +82,4 @@ sha256sum -c checksums.txt
         "input_file": Path(input_file).name,
         "args": args,
     }
-    (output_dir / "provenance.json").write_text(json.dumps(provenance, indent=2))
+    (output_dir / "provenance.json").write_text(json.dumps(provenance, indent=2), encoding="utf-8")

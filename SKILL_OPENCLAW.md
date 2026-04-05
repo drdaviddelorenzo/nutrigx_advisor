@@ -2,7 +2,7 @@
 
 **Skill ID**: `nutrigenomics`  
 **Platform**: OpenClaw  
-**Version**: 0.2.0-openclaw  
+**Version**: 0.2.3-openclaw  
 **Status**: Ready for Community  
 **Author**: David de Lorenzo  
 **License**: MIT  
@@ -217,7 +217,7 @@ Have suggestions for SNPs to add? Found a bug? Want to contribute?
 
 ## Version History
 
-**v0.2.0-openclaw** (Feb 2026)
+**v0.2.3-openclaw** (Feb 2026)
 - Adapted for OpenClaw platform
 - Improved file upload handling
 - Enhanced user-facing documentation

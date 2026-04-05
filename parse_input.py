@@ -8,6 +8,8 @@ import csv
 import re
 from pathlib import Path
 
+from path_safety import validate_input_file
+
 
 def detect_format(filepath: str) -> str:
     """Auto-detect genetic file format from header."""
@@ -109,6 +111,8 @@ def parse_vcf(filepath: str) -> dict:
 
 def parse_genetic_file(filepath: str, fmt: str = "auto") -> dict:
     """Parse genetic data file in any supported format."""
+    filepath = str(validate_input_file(filepath))
+
     if fmt == "auto":
         fmt = detect_format(filepath)
     

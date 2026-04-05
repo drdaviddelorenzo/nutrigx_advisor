@@ -7,7 +7,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ---
 
-## [0.2.0] — 2026-02-28
+## [0.2.3] — 2026-02-28
 
 ### Added
 
@@ -97,7 +97,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 For healthcare professionals and researchers, a professional-grade command-line tool (**NutriGx Advisor**) is available for ClawBio platform, offering advanced features and integration capabilities for clinical and research workflows.
 
-### Current Limitations (v0.2.0)
+### Current Limitations (v0.2.3)
 
 1. **Common Variants Only**
    - SNP panel limited to MAF > 1% in major populations
@@ -169,15 +169,15 @@ If you use Nutrigenomics in research or education:
   title = {Nutrigenomics: Personalised Nutrition from Genetic Data},
   year = {2026},
   url = {https://github.com/drdaviddelorenzo/nutrigenomics},
-  version = {0.2.0}
+  version = {0.2.3}
 }
 ```
 
 ### APA
-de Lorenzo, D. (2026). *Nutrigenomics: Personalised nutrition from genetic data* (Version 0.2.0) [Software]. Retrieved from https://github.com/drdaviddelorenzo/nutrigenomics
+de Lorenzo, D. (2026). *Nutrigenomics: Personalised nutrition from genetic data* (Version 0.2.3) [Software]. Retrieved from https://github.com/drdaviddelorenzo/nutrigenomics
 
 ### Chicago
-de Lorenzo, David. "Nutrigenomics: Personalised Nutrition from Genetic Data." Version 0.2.0. Accessed [Date]. https://github.com/drdaviddelorenzo/nutrigenomics.
+de Lorenzo, David. "Nutrigenomics: Personalised Nutrition from Genetic Data." Version 0.2.3. Accessed [Date]. https://github.com/drdaviddelorenzo/nutrigenomics.
 
 ---
 

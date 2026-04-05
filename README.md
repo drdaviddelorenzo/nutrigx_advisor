@@ -230,12 +230,12 @@ If you use Nutrigenomics in research or education:
   title = {Nutrigenomics: Personalised Nutrition from Genetic Data},
   year = {2026},
   url = {https://github.com/drdaviddelorenzo/nutrigenomics},
-  version = {0.2.0}
+  version = {0.2.3}
 }
 ```
 
 ### APA
-de Lorenzo, D. (2026). *Nutrigenomics: Personalised nutrition from genetic data* (Version 0.2.0) [Software]. Retrieved from https://github.com/drdaviddelorenzo/nutrigenomics
+de Lorenzo, D. (2026). *Nutrigenomics: Personalised nutrition from genetic data* (Version 0.2.3) [Software]. Retrieved from https://github.com/drdaviddelorenzo/nutrigenomics
 
 See [ATTRIBUTION.md](ATTRIBUTION.md) for more citation formats.
 

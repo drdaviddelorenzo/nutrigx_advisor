@@ -210,7 +210,7 @@ def generate_report(snp_calls, risk_scores, snp_panel, output_dir, figures=True,
     lines += [
         "## Reproducibility",
         "",
-        "This report was generated deterministically. See `commands.sh` and `environment.yml`",
+        "This report was generated deterministically. See `README_reproducibility.txt` and `environment.yml`",
         "in the output directory to reproduce this analysis on any machine.",
         "",
         "## References",
@@ -222,7 +222,7 @@ def generate_report(snp_calls, risk_scores, snp_panel, output_dir, figures=True,
 
     report_text = "\n".join(lines)
     report_path = output_dir / "nutrigenomics_report.md"
-    report_path.write_text(report_text)
+    report_path.write_text(report_text, encoding="utf-8")
 
     if figures:
         _generate_figures(risk_scores, output_dir)

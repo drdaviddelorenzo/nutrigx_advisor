@@ -29,6 +29,7 @@ from extract_genotypes import extract_snp_genotypes
 from score_variants import compute_nutrient_risk_scores
 from generate_report import generate_report
 from repro_bundle import create_reproducibility_bundle
+from path_safety import validate_input_file, validate_output_dir, validate_panel_file
 
 
 class NutrigenomicsOpenClaw:
@@ -50,15 +51,16 @@ class NutrigenomicsOpenClaw:
             panel_path: Path to custom SNP panel JSON (default: data/snp_panel.json)
         """
         # Resolve SNP panel
+        skill_root = Path(__file__).parent.resolve()
         if panel_path is None:
-            panel_path = Path(__file__).parent / "data" / "snp_panel.json"
+            panel_path = (skill_root / "data" / "snp_panel.json").resolve()
         else:
-            panel_path = Path(panel_path)
+            panel_path = validate_panel_file(panel_path, skill_root)
         
         if not panel_path.exists():
             raise FileNotFoundError(f"SNP panel not found at {panel_path}")
         
-        with open(panel_path) as f:
+        with open(panel_path, encoding="utf-8") as f:
             self.snp_panel = json.load(f)
         
         self.panel_path = panel_path
@@ -88,7 +90,18 @@ class NutrigenomicsOpenClaw:
         """
         
         try:
-            input_path = Path(input_file)
+            try:
+                input_path = validate_input_file(input_file)
+            except Exception as exc:
+                return {
+                    "status": "error",
+                    "message": str(exc),
+                    "report_path": None,
+                    "figures": {},
+                    "summary": None,
+                    "risk_scores": {}
+                }
+
             if not input_path.exists():
                 return {
                     "status": "error",
@@ -100,11 +113,11 @@ class NutrigenomicsOpenClaw:
                 }
             
             # Set up output directory
+            workspace_root = Path.cwd().resolve()
             if output_dir is None:
-                output_dir = tempfile.mkdtemp(prefix="nutrigenomics_")
+                output_dir = tempfile.mkdtemp(prefix="nutrigenomics_", dir=str(workspace_root))
             
-            output_path = Path(output_dir)
-            output_path.mkdir(parents=True, exist_ok=True)
+            output_path = validate_output_dir(output_dir, workspace_root)
             
             print(f"[Nutrigenomics] Parsing genetic file: {input_path.name}")
             
