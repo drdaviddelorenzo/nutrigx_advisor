@@ -108,7 +108,7 @@
     "attribution_file": "ATTRIBUTION.md",
     "contributors_file": "CONTRIBUTORS.md",
     "changelog_file": "CHANGELOG.md",
-    "license": "MIT (see LICENSE file)",
+    "license": "MIT (see LICENSE.txt file)",
     "citation_format": "See ATTRIBUTION.md for BibTeX, APA, and Chicago formats"
   },
   "security": {
