@@ -7,6 +7,38 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ---
 
+## [0.2.6] — 2026-04-05
+
+### Changed
+- Moved `run_analysis()` entry point to the top of `openclaw_adapter.py`, immediately
+  after imports, so the OpenClaw scanner can confirm the declared entry point
+  (`openclaw_adapter:run_analysis`) without needing to parse the full file.
+
+### Fixed
+- Version strings bumped consistently to 0.2.6 across `openclaw.json`, `SKILL.md`,
+  `generate_report.py`, and `repro_bundle.py`.
+
+---
+
+## [0.2.5] — 2026-04-05
+
+### Added
+- **`path_safety.py`** — Path validation module that was imported by the adapter but
+  missing from the published package. Provides `validate_input_file`,
+  `validate_output_dir`, and `validate_panel_file`, enforcing allowed extensions
+  (`.txt`, `.csv`, `.vcf`) and blocking path traversal attacks.
+
+### Fixed
+- **`repro_bundle.py`** — Input file name and SHA-256 hash of the input file are no
+  longer stored in any reproducibility artefact. Storing the filename risked persisting
+  a personally identifiable label; storing the hash created a stable fingerprint of the
+  user's genetic dataset. Only the SNP panel and generated report are now checksummed.
+- **`SKILL.md`** — Removed `.gitignore` from the file structure diagram and updated
+  `provenance.json` and `checksums.txt` descriptions to reflect the privacy-preserving
+  behaviour introduced in this version.
+
+---
+
 ## [0.2.4] — 2026-04-05
 
 ### Security / Privacy

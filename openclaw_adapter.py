@@ -32,6 +32,23 @@ from repro_bundle import create_reproducibility_bundle
 from path_safety import validate_input_file, validate_output_dir, validate_panel_file
 
 
+# OpenClaw entry point (called by the platform)
+def run_analysis(input_file: str, file_format: str = "auto") -> Dict[str, Any]:
+    """
+    Main entry point for OpenClaw.
+    
+    Args:
+        input_file: Path to uploaded genetic data file
+        file_format: File format hint ("auto", "23andme", "ancestry", "vcf")
+    
+    Returns:
+        Result dictionary with analysis outputs
+    """
+    adapter = NutrigenomicsOpenClaw()
+    return adapter.analyse_file(input_file, file_format=file_format)
+
+
+
 class NutrigenomicsOpenClaw:
     """
     OpenClaw adapter for Nutrigenomics.
@@ -287,22 +304,6 @@ class NutrigenomicsOpenClaw:
             return "🟡"
         else:
             return "🔴"
-
-
-# OpenClaw entry point (called by the platform)
-def run_analysis(input_file: str, file_format: str = "auto") -> Dict[str, Any]:
-    """
-    Main entry point for OpenClaw.
-    
-    Args:
-        input_file: Path to uploaded genetic data file
-        file_format: File format hint ("auto", "23andme", "ancestry", "vcf")
-    
-    Returns:
-        Result dictionary with analysis outputs
-    """
-    adapter = NutrigenomicsOpenClaw()
-    return adapter.analyse_file(input_file, file_format=file_format)
 
 
 if __name__ == "__main__":
