@@ -7,6 +7,25 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ---
 
+## [0.2.8] — 2026-04-05
+
+### Fixed
+- **`README_OPENCLAW.md`** — `checksums.txt` description corrected: previously
+  said "SHA-256 checksums of input and output files"; now correctly states only
+  the SNP panel and output report are checksummed, with an explicit note that
+  the input file is excluded to avoid creating a stable fingerprint.
+- **`README_OPENCLAW.md`** — `provenance.json` description corrected: previously
+  said "Timestamp, software version, and input filename"; now correctly states
+  timestamp, software version, and analysis settings, with an explicit note that
+  the input filename is not recorded.
+- **`README.md`** — `provenance.json` line corrected from "Timestamp, version,
+  and input filename metadata" to "Timestamp, version, and analysis settings
+  (input filename intentionally not recorded)".
+- Version strings bumped to 0.2.8 across `openclaw.json`, `SKILL.md`,
+  `generate_report.py`, and `repro_bundle.py`.
+
+---
+
 ## [0.2.7] — 2026-04-05
 
 ### Fixed

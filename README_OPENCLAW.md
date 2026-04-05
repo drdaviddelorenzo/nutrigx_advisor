@@ -192,10 +192,14 @@ After analysis, you'll receive:
 
 5. **environment.yml** — Pinned conda environment for reproducibility
 
-6. **checksums.txt** — SHA-256 checksums of input and output files
+6. **checksums.txt** — SHA-256 checksums of the SNP panel and output report only
+   - The input file is intentionally excluded: checksumming a genetic file creates
+     a stable fingerprint that could re-identify the dataset
 
 7. **provenance.json** — Analysis metadata
-   - Timestamp, software version, and input filename
+   - Timestamp, software version, and analysis settings
+   - Input filename is intentionally not recorded (avoids persisting a
+     personally identifiable label alongside your genetic results)
 
 > **Note on file persistence**: output files are saved to a timestamped folder
 > (`nutrigenomics_output_YYYYMMDD_HHMMSS/`) in your working directory and remain

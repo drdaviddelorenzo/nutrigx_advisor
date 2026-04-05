@@ -1,7 +1,7 @@
 # Nutrigenomics — Personalised Nutrition from Genetic Data
 
 **Skill ID**: `nutrigenomics`
-**Version**: 0.2.7
+**Version**: 0.2.8
 **Status**: Beta
 **Author**: David de Lorenzo 
 **Requires**: Python 3.11+, pandas, numpy, matplotlib, seaborn, reportlab (optional)

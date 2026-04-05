@@ -116,8 +116,8 @@ python examples/generate_patient.py --run
 ### Reproducibility Package
 - `README_reproducibility.txt` — Step-by-step instructions to reproduce the analysis
 - `environment.yml` — Pinned conda environment
-- `checksums.txt` — SHA-256 data validation checksums
-- `provenance.json` — Timestamp, version, and input filename metadata
+- `checksums.txt` — SHA-256 checksums of the SNP panel and output report (input file intentionally excluded)
+- `provenance.json` — Timestamp, version, and analysis settings (input filename intentionally not recorded)
 
 ---
 
