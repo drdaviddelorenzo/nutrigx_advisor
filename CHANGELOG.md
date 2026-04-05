@@ -7,6 +7,26 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ---
 
+## [0.3.0] — 2026-04-05
+
+### Fixed
+- **`SKILL.md`** — Added required YAML frontmatter (`name`, `description`, `metadata`) so
+  OpenClaw's skill loader can discover and register the skill. Previously the file
+  contained only human-readable Markdown; without machine-parseable frontmatter the
+  skill was silently skipped at the discovery stage and never appeared in
+  `openclaw skills list`.
+- **`SKILL.md`** — Added `metadata.openclaw.requires.bins: ["python3"]` to gate
+  eligibility on Python 3 being present on PATH, and `emoji: "🧬"` for the macOS
+  Skills UI.
+- **`openclaw.json`** — Corrected `documentation.main` reference from
+  `SKILL_OPENCLAW.md` to `README_OPENCLAW.md`, which is the actual user-facing guide.
+- Removed `SKILL_OPENCLAW.md` (renamed `CLAWHUB_LISTING.md`; content fully covered by
+  `README_OPENCLAW.md`) and excluded internal-only files (`IMPLEMENTATION.md`,
+  `_meta.json`) from the published package.
+- Version bumped to 0.3 in `SKILL.md` and `openclaw.json`.
+
+---
+
 ## [0.2.8] — 2026-04-05
 
 ### Fixed
